@@ -278,6 +278,38 @@ body {
   margin-left: 30px;
 }
 
+.project-div {
+  position: relative;
+}
+
+.project-hover-text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 370px;
+  padding: 24px;
+  padding-top: 53px;
+  font-size: 18px;
+  line-height: 156%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  opacity: 0;
+  display: flex;
+}
+
+.project-item:hover .project-hover-text {
+  opacity: 1;
+
+  position: absolute;
+  display: inline-block;
+  content: '';
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
 .project-item .link {
   display: block;
   outline: none;
@@ -363,6 +395,7 @@ body {
 }
 
 .work-item {
+  position: relative;
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
@@ -371,6 +404,28 @@ body {
   height: auto;
 }
 
+.work-item::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.work-text {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  transform: translate(-50%);
+
+  font-weight: bold;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 .card-set-list {
   display: flex;
   flex-wrap: wrap;

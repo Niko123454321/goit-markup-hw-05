@@ -139,6 +139,12 @@ body {
   padding-bottom: 32px;
   color: var(--title-text-color);
   font-weight: 500;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .site-nav .link.current {
@@ -195,6 +201,12 @@ body {
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
+
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .hero-text {
@@ -277,6 +289,12 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 4px;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .control .button:hover,
@@ -310,6 +328,13 @@ body {
   color: #ffffff;
   opacity: 0;
   display: flex;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
+  animation-direction: alternate;
 }
 
 .project-item:hover .project-hover-text {
@@ -327,6 +352,12 @@ body {
 .project-item .link {
   display: block;
   outline: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .project-item .link:hover,
@@ -509,6 +540,12 @@ body {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .box-svg {
@@ -563,6 +600,12 @@ body {
   fill: var(--box-svg);
   border-radius: 4px;
   border: 1px solid var(--box-svg);
+
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .clients-svg-bg:hover,
@@ -651,6 +694,12 @@ body {
   height: 44px;
   background-color: var(--footer-svg);
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  cubic-bezier: (0.4, 0, 0.2, 1);
+  transition-timing-function: linear;
+  transition-delay: 0;
 }
 
 .footer-join-list + .footer-join-list {

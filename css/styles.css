@@ -17,9 +17,9 @@
 
   --card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-
+  --backdrop-rgba: rgba(0, 0, 0, 0.2);
   --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
+  --work-rgba: rgba(47, 48, 58, 0.8);
   --card-set-gap: 30px;
 }
 
@@ -140,11 +140,7 @@ body {
   color: var(--title-text-color);
   font-weight: 500;
 
-  transition-property: color;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link.current {
@@ -160,7 +156,7 @@ body {
   background-color: var(--accent-color);
   border-style: solid;
   border-color: var(--accent-color);
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 }
 
@@ -176,19 +172,20 @@ body {
 .contact .link:hover,
 .contact .link:focus {
   color: var(--accent-color);
-  fill: var(--accent-color);
 }
 
 .contact .envelope {
   width: 16px;
   height: 12px;
   margin-right: 10px;
+  fill: currentColor;
 }
 
 .contact .smartphone {
   width: 10px;
   height: 16px;
   margin-right: 10px;
+  fill: currentColor;
 }
 
 .contact .item + .item {
@@ -202,11 +199,7 @@ body {
   display: flex;
   align-items: center;
 
-  transition-property: color, fill;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-text {
@@ -290,11 +283,9 @@ body {
   border: none;
   border-radius: 4px;
 
-  transition-property: background-color, color, box-shadow;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .control .button:hover,
@@ -312,32 +303,32 @@ body {
 
 .project-div {
   position: relative;
+  overflow: hidden;
 }
 
 .project-hover-text {
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  width: 370px;
+  transform: translateY(100%);
+  top: 0;
+  left: 0;
+
   padding: 24px;
   padding-top: 53px;
   font-size: 18px;
   line-height: 156%;
   letter-spacing: 0.03em;
-  color: #ffffff;
+  color: var(--primary-white-color);
   opacity: 0;
-  display: flex;
 
-  transition-property: color, background-color;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
-  animation-direction: alternate;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-item:hover .project-hover-text {
+.project-item .link:focus .project-hover-text,
+.project-item .link:hover .project-hover-text {
+  transform: translateY(0);
   opacity: 1;
 
   position: absolute;
@@ -353,11 +344,7 @@ body {
   display: block;
   outline: none;
 
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item .link:hover,
@@ -449,27 +436,22 @@ body {
   height: auto;
 }
 
-.work-item::before {
-  position: absolute;
-  display: inline-block;
-  content: '';
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  background-color: rgba(47, 48, 58, 0.8);
-}
-
 .work-text {
   position: absolute;
-  bottom: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
   left: 50%;
   transform: translate(-50%);
 
   font-weight: bold;
   line-height: 1.14;
-  text-align: center;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--primary-white-color);
+  width: 100%;
+  height: 70px;
+  background-color: var(--work-rgba);
 }
 .card-set-list {
   display: flex;
@@ -541,11 +523,8 @@ body {
   width: 44px;
   height: 44px;
 
-  transition-property: background-color, fill;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .box-svg {
@@ -601,11 +580,8 @@ body {
   border-radius: 4px;
   border: 1px solid var(--box-svg);
 
-  transition-property: border, fill;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-svg-bg:hover,
@@ -695,11 +671,7 @@ body {
   background-color: var(--footer-svg);
   border-radius: 50%;
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  cubic-bezier: (0.4, 0, 0.2, 1);
-  transition-timing-function: linear;
-  transition-delay: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-join-list + .footer-join-list {
@@ -735,12 +707,16 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--backdrop-rgba);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden.modal {
+  transform: translate(-50%, -50%) scale(0);
 }
 
 .backdrop-svg {
@@ -750,7 +726,7 @@ body {
 
 .backdrop-close {
   border: none;
-  background-color: white;
+  background-color: var(--primary-white-color);
   position: absolute;
   padding: 0px;
   border-radius: 50%;
@@ -762,9 +738,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
 
   width: 528px;
   height: 581px;
-  background-color: white;
+  background-color: var(--primary-white-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

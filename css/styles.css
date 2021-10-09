@@ -707,7 +707,7 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--backdrop-rgba);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .backdrop.is-hidden {
